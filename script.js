@@ -32,14 +32,18 @@ document.addEventListener("DOMContentLoaded", function(){
 
     productList.addEventListener('click', (e)=>{
         if(e.target.tagName === 'BUTTON'){ // if we don't add this then the browser will register any click cause the event is on productList div so if you click anywhere on div it will register, but we want to listen only when the BUTTON is clicked. And to check the element name use tagName.
-        // console.log(e.target.getAttribute('data-id')); //explain getAttribute? Here we are getting the actuall integer id value in integer the course instructor did the same got string so he parsed the string to int using parseInt.
+        // console.log(e.target.getAttribute('data-id')); //explain getAttribute? Here we are getting the actuall integer id value in integer the course instructor did the same got string so he parsed the string to int using parseInt. But turned out that 1 was string but how? Broswer show int?
 
-        const productId = e.target.getAttribute(data-id);
-        Products.find((p) => p.id === productId);
-        addToCart(productId);
+        const productId = parseInt(e.target.getAttribute('data-id'));
+        const product = Products.find((p) => p.id === productId);
+        addToCart(product);
+          console.log(product);  
         }
     })
 
-    
+    function addToCart(Product){
+     cart.push(Product); 
+     console.log(cart);  
+    }
 
 });
