@@ -30,5 +30,16 @@ document.addEventListener("DOMContentLoaded", function(){
 
     // //so we are creating Div for each product object we will loop through each product objects present in product array and we create one div for each of the product. And inside that div we will have two things: 1. Product name and product price. Apart from them 1 atc button. But why dont we create one button only, suppose there are three product and you have only 1 atc button then how will you know which product to add? That's why each button for each seperate product and how will you know which Button got clicked? You have to give a unique id for each product-button, that we already have in produc array.
 
+    productList.addEventListener('click', (e)=>{
+        if(e.target.tagName === 'BUTTON'){ // if we don't add this then the browser will register any click cause the event is on productList div so if you click anywhere on div it will register, but we want to listen only when the BUTTON is clicked. And to check the element name use tagName.
+        // console.log(e.target.getAttribute('data-id')); //explain getAttribute? Here we are getting the actuall integer id value in integer the course instructor did the same got string so he parsed the string to int using parseInt.
+
+        const productId = e.target.getAttribute(data-id);
+        Products.find((p) => p.id === productId);
+        addToCart(productId);
+        }
+    })
+
+    
 
 });
