@@ -67,4 +67,11 @@ document.addEventListener("DOMContentLoaded", function(){
         }
     }
 
+    checkOutBtn.addEventListener('click', ()=>{
+        cart.length = 0; //once the check out clicked the cart got cleared
+        totalPriceDisplay.textContent = "$0";
+        alert('Checked Out!');
+        showCartItems(); //why calling this again?
+    });
+
 });
