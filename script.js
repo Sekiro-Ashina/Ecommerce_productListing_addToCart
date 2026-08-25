@@ -7,10 +7,10 @@ document.addEventListener("DOMContentLoaded", function(){
     ];
 
     const productList = document.querySelector("#products-list");
-    const cartItems = document.querySelector("#cart-items");
+    const cartItemsDisplay = document.querySelector("#cart-items-Display");
     const emptyCartMessage = document.querySelector("#empty-cart");
     const cartTotal = document.querySelector("#cart-total");
-    const totalPrice = document.querySelector("#total-price");
+    const totalPriceDisplay = document.querySelector("#total-price");
     const checkOutBtn = document.querySelector("#checkout-btn");
 
    
@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", function(){
         // console.log(e.target.getAttribute('data-id')); //explain getAttribute? Here we are getting the actuall integer id value in integer the course instructor did the same got string so he parsed the string to int using parseInt. But turned out that 1 was string but how? Broswer show int?
 
         const productId = parseInt(e.target.getAttribute('data-id'));
-        const product = Products.find((p) => p.id === productId);
+        const product = Products.find((p) => p.id === productId); //explain whole shit.
         addToCart(product);
           console.log(product);  
         }
@@ -43,7 +43,28 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function addToCart(Product){
      cart.push(Product); 
-     console.log(cart);  
+     showCartItems();  
+    }
+
+    function showCartItems(){
+        let totalprice = 0;
+        cartItemsDisplay.innerHTML = "";//my cart item were priniting same item from 0 each time when i click to add why? 
+
+        if(cart.length >0){ //only runs if the cart[] have atleast 1 element
+            emptyCartMessage.classList.add('hidden');
+            cartTotal.classList.remove('hidden');
+            cart.forEach((item) => {  //we are looping over cart arr
+                totalprice = totalprice + item.price;
+               const cartDiv= document.createElement('div');
+               cartDiv.innerHTML = `${item.name} - $${item.price.toFixed(2)}`;
+               cartItemsDisplay.appendChild(cartDiv);
+
+               totalPriceDisplay.textContent = `$${totalprice.toFixed(2)}`;
+            })
+        }
+        else{
+            emptyCartMessage.classList.add('hidden');
+        }
     }
 
 });
