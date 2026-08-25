@@ -63,13 +63,16 @@ document.addEventListener("DOMContentLoaded", function(){
             })
         }
         else{
-            emptyCartMessage.classList.add('hidden');
+            emptyCartMessage.classList.remove('hidden');
+            cartTotal.classList.add("hidden");
+            totalPriceDisplay.textContent = "$0";
+
         }
     }
 
     checkOutBtn.addEventListener('click', ()=>{
         cart.length = 0; //once the check out clicked the cart got cleared
-        totalPriceDisplay.textContent = "$0";
+        // totalPriceDisplay.textContent = "$0"; it shouldn't be here cause once the showcartItem() get calls again it will check the showcart and found that length is 0, then it will run else part.
         alert('Checked Out!');
         showCartItems(); //why calling this again?
     });
