@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", function(){
     const checkOutBtn = document.querySelector("#checkout-btn");
 
    
-
-    //you can understand product as an array which sole purpose is to store all the product details, then we simply loop over it and push to array according to the product which is clicked.
-    const cart = []; //why another array? 
+    //you can understand product as an array whose sole purpose is to store all the product details,and when user click on any item we simply loop over it and push that item to cart array.
+   
+    const cart = []; //why another array? To store the item selected by the user. 
 
     Products.forEach((item) =>{ //item is only looping on each object present in array it gives you whole object not the data inside it, to access data you have to enter it, like you go the whole object of the product index 0 now you can do product.name etc. Wrong Item is not only looping each loop item have the whole product item so product.name is wrong, now item is the one whos representing the product so item.name.
         const productDiv = document.createElement('div');
@@ -48,7 +48,8 @@ document.addEventListener("DOMContentLoaded", function(){
 
     function showCartItems(){
         let totalprice = 0;
-        cartItemsDisplay.innerHTML = "";//my cart item were priniting same item from 0 each time when i click to add why? 
+        cartItemsDisplay.innerHTML = "";//my cart item were priniting same item from 0 each time when i click to add why? See copy.
+
 
         if(cart.length >0){ //only runs if the cart[] have atleast 1 element
             emptyCartMessage.classList.add('hidden');
@@ -74,7 +75,7 @@ document.addEventListener("DOMContentLoaded", function(){
         cart.length = 0; //once the check out clicked the cart got cleared
         // totalPriceDisplay.textContent = "$0"; it shouldn't be here cause once the showcartItem() get calls again it will check the showcart and found that length is 0, then it will run else part.
         alert('Checked Out!');
-        showCartItems(); //why calling this again?
+        showCartItems(); //why calling this again? Cause after checkout the cart[] is now 0 but visually totalprice still shows and cartTotal message, so we have to update that by calling showCart() it will se oh cart length<0 run else.
     });
 
 });
