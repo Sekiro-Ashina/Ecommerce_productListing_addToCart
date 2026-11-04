@@ -20,3 +20,18 @@ body {
   background:
     radial-gradient(circle at top left, #e5dfff 0, transparent 30%), #f8f7fc;
 }
+.container {
+  width: min(100%, 1040px);
+  margin: auto;
+}
+.page-header {
+  max-width: 590px;
+  margin: 0 0 32px 8px;
+}
+.eyebrow {
+  color: var(--purple);
+  font-size: 0.73rem;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+}
