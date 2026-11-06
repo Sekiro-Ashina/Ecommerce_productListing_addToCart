@@ -50,3 +50,18 @@ h1 {
   font-size: 1rem;
   line-height: 1.55;
 }
+.shop-grid {
+  display: grid;
+  grid-template-columns: 1.18fr 0.82fr;
+  gap: 20px;
+  align-items: start;
+}
+.products-panel,
+.cart-panel {
+  padding: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 18px 45px rgba(68, 55, 121, 0.08);
+  backdrop-filter: blur(12px);
+}
