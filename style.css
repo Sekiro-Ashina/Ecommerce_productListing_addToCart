@@ -77,3 +77,15 @@ h2 {
   font-size: 1.55rem;
   letter-spacing: -0.03em;
 }
+.item-count {
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: var(--purple);
+  background: var(--lavender);
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+#products-list {
+  display: grid;
+  gap: 12px;
+}
