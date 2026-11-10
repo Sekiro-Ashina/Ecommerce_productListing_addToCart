@@ -105,3 +105,14 @@ h2 {
   transform: translateY(-2px);
   box-shadow: 0 10px 22px rgba(74, 58, 132, 0.1);
 }
+.product > span {
+  margin-right: auto;
+  font-weight: 600;
+  line-height: 1.45;
+}
+button {
+  border: 0;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
