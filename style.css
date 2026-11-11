@@ -116,3 +116,21 @@ button {
   font-weight: 700;
   cursor: pointer;
 }
+.product button {
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: var(--purple);
+  background: #f2efff;
+  font-size: 0.79rem;
+  transition:
+    color 0.2s,
+    background 0.2s,
+    transform 0.2s;
+}
+.product button:hover,
+.product button:focus-visible {
+  color: #fff;
+  background: var(--purple);
+  transform: scale(1.03);
+  outline: none;
+}
