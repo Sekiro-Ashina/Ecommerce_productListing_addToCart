@@ -134,3 +134,22 @@ button {
   transform: scale(1.03);
   outline: none;
 }
+.cart-panel {
+  background: var(--ink);
+  color: #fff;
+}
+.cart-panel .eyebrow {
+  color: #bdb1ff;
+}
+.cart-panel h2 {
+  color: #fff;
+}
+.cart-icon {
+  display: grid;
+  place-items: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.1);
+  font-size: 1.1rem;
+}
