@@ -153,3 +153,20 @@ button {
   background: rgba(255, 255, 255, 0.1);
   font-size: 1.1rem;
 }
+#cart-items-Display {
+  min-height: 96px;
+}
+#empty-cart {
+  display: grid;
+  gap: 5px;
+  padding: 17px;
+  border: 1px dashed rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  color: #f4f2ff;
+  font-weight: 600;
+}
+#empty-cart span {
+  color: #aaa4be;
+  font-size: 0.84rem;
+  font-weight: 400;
+}
