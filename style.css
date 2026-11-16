@@ -179,3 +179,13 @@ button {
 #cart-total {
   margin-top: 20px;
 }
+.total-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+  color: #c8c2dd;
+}
+.total-row strong {
+  color: #fff;
+  font-size: 1.2rem;
+}
