@@ -208,3 +208,21 @@ button {
   transform: translateY(-1px);
   outline: none;
 }
+.hidden {
+  display: none !important;
+}
+@media (max-width: 720px) {
+  body {
+    padding: 30px 14px;
+  }
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+  .products-panel,
+  .cart-panel {
+    padding: 22px;
+  }
+  .page-header {
+    margin-left: 4px;
+  }
+}
